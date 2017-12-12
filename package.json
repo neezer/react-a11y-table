@@ -1,6 +1,6 @@
 {
   "name": "@neezer/react-a11y-table",
-  "version": "0.0.0-semantically-released",
+  "version": "0.0.0-development",
   "description": "A11y Table",
   "author": "neezer <evan@sherwood.io>",
   "license": "WTFPL",
@@ -17,7 +17,8 @@
     "babel-preset-react": "^6.24.1",
     "buble": "^0.18.0",
     "prettier-standard": "^6.0.0",
-    "standard": "^10.0.3"
+    "standard": "^10.0.3",
+    "semantic-release": "^8.2.0"
   },
   "dependencies": {
     "@most/core": "^1.1.0",
@@ -27,14 +28,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/neezer/react-select.git"
+    "url": "https://github.com/neezer/react-a11y-table.git"
   },
   "peerDependencies": {
     "react": "^16.2.0"
   },
   "scripts": {
     "build": "buble -i modules -o es --no modules && babel -d . modules",
-    "clean": "rm -rf *.js es"
+    "clean": "rm -rf *.js es",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "babel": {
     "presets": [
