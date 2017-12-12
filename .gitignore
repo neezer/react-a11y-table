@@ -1,0 +1,7 @@
+*.log
+es
+node_modules
+/*.js
+package-lock.json
+coverage
+.nyc_output

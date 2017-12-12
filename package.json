@@ -1,0 +1,45 @@
+{
+  "name": "@neezer/react-a11y-table",
+  "version": "0.0.0-semantically-released",
+  "description": "A11y Table",
+  "author": "neezer <evan@sherwood.io>",
+  "license": "WTFPL",
+  "main": "index.js",
+  "module": "es/index.js",
+  "files": [
+    "es",
+    "index.js",
+    "utils.js"
+  ],
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "buble": "^0.18.0",
+    "prettier-standard": "^6.0.0",
+    "standard": "^10.0.3"
+  },
+  "dependencies": {
+    "@most/core": "^1.1.0",
+    "@most/dom-event": "^2.0.0",
+    "@most/scheduler": "^1.1.0",
+    "prop-types": "^15.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/neezer/react-select.git"
+  },
+  "peerDependencies": {
+    "react": "^16.2.0"
+  },
+  "scripts": {
+    "build": "buble -i modules -o es --no modules && babel -d . modules",
+    "clean": "rm -rf *.js es"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ]
+  }
+}
