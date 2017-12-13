@@ -8,8 +8,7 @@
   "module": "es/index.js",
   "files": [
     "es",
-    "index.js",
-    "utils.js"
+    "index.js"
   ],
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -36,7 +35,9 @@
   "scripts": {
     "build": "buble -i modules -o es --no modules && babel -d . modules",
     "clean": "rm -rf *.js es",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "test": "exit 0",
+    "lint": "exit 0"
   },
   "babel": {
     "presets": [
