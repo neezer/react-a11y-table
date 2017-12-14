@@ -38,7 +38,8 @@
     "clean": "rm -rf *.js es",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "test": "exit 0",
-    "lint": "exit 0"
+    "lint": "exit 0",
+    "prepublishOnly": "yarn build"
   },
   "babel": {
     "presets": [
