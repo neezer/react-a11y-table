@@ -44,8 +44,13 @@ export default class FixedHeaderContainer extends React.Component {
       window.requestAnimationFrame(() => {
         this._scrolling = false
 
-        node.style.left = `${this._scrollX}px`
-        node.style.top = `${this._scrollY}px`
+        if (this.props.trackX) {
+          node.style.left = `${this._scrollX}px`
+        }
+
+        if (this.props.trackY) {
+          node.style.top = `${this._scrollY}px`
+        }
       })
     }
 
@@ -53,7 +58,9 @@ export default class FixedHeaderContainer extends React.Component {
   }
 
   render () {
-    const { Content, FixedContent, className } = this.props
+    const { children, FixedContent, className } = this.props
+    const style = { position: 'relative' }
+
     const containerProps = {
       className,
       containerRef: this.containerRef,
@@ -62,13 +69,15 @@ export default class FixedHeaderContainer extends React.Component {
 
     return (
       <Container {...containerProps}>
-        <FixedContent fixedRef={this.fixedRef} />
-        <Content />
+        <FixedContent fixedRef={this.fixedRef} style={style} />
+        {children}
       </Container>
     )
   }
 }
 
 FixedHeaderContainer.defaultProps = {
-  FixedContent: DefaultFixedContent
+  FixedContent: DefaultFixedContent,
+  trackX: true,
+  trackY: true
 }
