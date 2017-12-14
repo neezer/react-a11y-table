@@ -40,11 +40,5 @@
     "test": "exit 0",
     "lint": "exit 0",
     "prepublishOnly": "yarn build"
-  },
-  "babel": {
-    "presets": [
-      "env",
-      "react"
-    ]
   }
 }

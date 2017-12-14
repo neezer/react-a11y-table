@@ -15,3 +15,13 @@ trim_trailing_whitespace = true
 charset = utf-8
 indent_style = space
 indent_size = 2
+
+[*.json]
+charset = utf-8
+indent_style = space
+indent_size = 2
+
+[.babelrc]
+charset = utf-8
+indent_style = space
+indent_size = 2
