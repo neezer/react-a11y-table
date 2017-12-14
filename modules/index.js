@@ -15,8 +15,13 @@ export default class A11yTable extends React.Component {
 
   componentDidMount () {
     const { height } = this.theadNode.getBoundingClientRect()
+    const th = this.theadNode.querySelector('th')
+    const style = th.currentStyle || window.getComputedStyle(th)
 
-    this.setState({ tableHeaderHeight: height })
+    const borderHeight =
+      parseFloat(style.borderTopWidth) + parseFloat(style.borderBottomWidth)
+
+    this.setState({ tableHeaderHeight: height + borderHeight })
   }
 
   render () {
@@ -31,6 +36,7 @@ export default class A11yTable extends React.Component {
         const style = Object.assign({}, givenStyle, {
           padding: 0,
           margin: 0,
+          listStyle: 'none',
           display: 'flex'
         })
 
@@ -42,7 +48,8 @@ export default class A11yTable extends React.Component {
                 key: `${columnName}--fake`,
                 className: columnHeaderClassName,
                 style: {
-                  flex: `0 0 ${column.size}px`
+                  flex: `0 0 ${column.size}px`,
+                  display: 'inline-block'
                 }
               }
 
