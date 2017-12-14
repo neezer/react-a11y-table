@@ -8,7 +8,8 @@
   "module": "es/index.js",
   "files": [
     "es",
-    "index.js"
+    "index.js",
+    "FixedHeaderContainer.js"
   ],
   "devDependencies": {
     "babel-cli": "^6.26.0",
